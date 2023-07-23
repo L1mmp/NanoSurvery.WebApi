@@ -1,6 +1,6 @@
 # NanoSurvery.WebApi
 
-# Using SQL Server database
+# Using different database
 You can create migration to postgers or e.t.c for example:
  1) Change Program.cs configuration to use Npgsql or e.t.c.
  2) You need to Remove-Migration, then Add-Migration
