@@ -1,0 +1,32 @@
+version: '3'
+networks:
+  app:
+   driver: bridge
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    networks:
+      - app
+    ports:
+      - '8000:80'
+  db:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=NanoSurveryDb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+    networks:
+      - app
+volumes:
+  db:
+    driver: local
