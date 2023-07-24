@@ -19,4 +19,6 @@ You can create migration to postgers or e.t.c for example:
  }
 4) You can get next question [GET] ...api/Question/getById?id
 5) You can get first question of survey [GET] ...api/Question/getFirstQuestion?surveyId
-P.S Use swagger doc to get request and responce info.
+
+
+P.s Еще бы сделал тесты, вынес авторизацию в отдельный IdentityServer и немного подредачил логику работы.
